@@ -1,0 +1,10 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+# 执行提交消息的格式验证。遵循规范：type(subject):msg
+# WebStorm用户可以下载【git commit template插件】进行提交格式控制。
+npx --no-install commitlint --edit "$1"
+
+
+# 用于测试
+#exit 1 # Commit will be aborted

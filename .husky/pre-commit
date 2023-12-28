@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+. "$(dirname -- "$0")/_/husky.sh"
+
+#npm test
+# 与eslint、stylelint结合
+
+# 与@commitlint结合
+# pnpm add @commitlint/{config-conventional,cli} -D
+
+
+# 用于测试
+#exit 1 # Commit will be aborted
