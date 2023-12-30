@@ -15,12 +15,12 @@ const decoded = computed(() => {
 
 <template>
   <div class="example-source-wrapper">
-    <div class="example-source language-vue" v-html="decoded" />
+    <div class="example-source mt-language-vue" v-html="decoded" />
   </div>
 </template>
 
-<style scoped lang="scss">
-.language-vue {
+<style lang="scss">
+.mt-language-vue {
   margin: 0;
   border-radius: 0;
 }

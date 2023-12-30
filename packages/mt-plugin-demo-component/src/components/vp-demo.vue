@@ -64,7 +64,7 @@ async function copyCode() {
   <!-- danger here DO NOT USE INLINE SCRIPT TAG -->
   <p text="sm" v-html="decodedDescription" />
 
-  <div class="example">
+  <div class="mt-example">
     <Example :file="path" :demo="formatPathDemos[path]" />
 
     <ElDivider class="m-0" />
@@ -117,7 +117,7 @@ async function copyCode() {
     <Transition name="el-fade-in-linear">
       <div
         v-show="sourceVisible"
-        class="example-float-control"
+        class="mt-example-float-control"
         tabindex="0"
         role="button"
         @click="toggleSourceVisible(false)"
@@ -132,8 +132,11 @@ async function copyCode() {
   </div>
 </template>
 
-<style scoped lang="scss">
-.example {
+<style lang="scss">
+.m-0 {
+  margin: 0;
+}
+.mt-example {
   border: 1px solid var(--border-color);
   border-radius: var(--el-border-radius-base);
 
