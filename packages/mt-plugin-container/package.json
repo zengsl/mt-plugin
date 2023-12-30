@@ -1,0 +1,37 @@
+{
+  "name": "@mt-plugin/mt-plugin-container",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".":{
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "rollup -c rollup.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zengsl/mt-plugin"
+  },
+  "keywords": [
+    "markdown-it",
+    "markdown-it-container",
+    "markdown-plugin"
+  ],
+  "author": "zzz",
+  "license": "MIT",
+  "peerDependencies": {
+    "markdown-it-container": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/markdown-it": "^13.0.7",
+    "markdown-it-container": "^4.0.0"
+  }
+}

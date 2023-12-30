@@ -1,7 +1,7 @@
 {
   "name": "mt-plugin",
   "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -12,16 +12,24 @@
     "prepare": "husky install",
     "preinstall": "npx only-allow pnpm"
   },
-  "dependencies": {
-  },
   "devDependencies": {
     "@antfu/eslint-config": "^2.6.1",
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
     "@commitlint/types": "^18.4.3",
+    "@rollup/plugin-commonjs": "^25.0.7",
+    "@rollup/plugin-node-resolve": "^15.2.3",
     "@types/node": "^20.10.5",
+    "esbuild": "^0.19.10",
     "eslint": "8.55.0",
     "husky": "^8.0.3",
+    "markdown-it": "^14.0.0",
+    "rollup": "^4.9.1",
+    "rollup-plugin-dts": "^6.1.0",
+    "rollup-plugin-esbuild": "^6.1.0",
     "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "markdown-it": "^14.0.0"
   }
 }

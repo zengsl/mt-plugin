@@ -1,0 +1,62 @@
+{
+  "name": "@mt-plugin/mt-plugin-demo-component",
+  "version": "0.0.1",
+  "description": "",
+  "type": "module",
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    },
+    "./dist/index.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "files": [
+    "dist","src/styles/app.scss"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "build2": "rollup -c rollup.config.js",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zengsl/mt-plugin"
+  },
+  "keywords": [
+    "markdown-it",
+    "markdown-it-container",
+    "markdown-plugin"
+  ],
+  "author": "zzz",
+  "license": "MIT",
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@vueuse/core": "^10.7.1",
+    "vue": "^3.3.11"
+  },
+  "peerDependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "@iconify-json/ri": "^1.1.18",
+    "@vueuse/core": "^10.7.1",
+    "vue": "^3.3.11"
+  },
+  "devDependencies": {
+    "@iconify-json/ri": "^1.1.18",
+    "@vitejs/plugin-vue": "^4.5.2",
+    "@vue/compiler-sfc": "^3.4.1",
+    "sass": "^1.69.6",
+    "unplugin-icons": "^0.18.1",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.0.8",
+    "vite-plugin-commonjs-externals": "^0.1.4",
+    "vite-plugin-node-polyfills": "^0.19.0",
+    "vite-plugin-resolve": "^2.5.1"
+  }
+}
