@@ -20,8 +20,11 @@ const decoded = computed(() => {
 </template>
 
 <style lang="scss">
-.mt-language-vue {
-  margin: 0;
-  border-radius: 0;
+.example-source-wrapper{
+  .mt-language-vue {
+    margin: 0;
+    border-radius: 0;
+  }
 }
+
 </style>
