@@ -1,18 +1,107 @@
-# Vue 3 + TypeScript + Vite
+# Demo容器插件
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+参考Element-Plus的组件展示方案实现,配合[mt-plugin-demo](https://github.com/zengsl/mt-plugin/tree/main/packages/mt-plugin-demo)使用，提供默认组件、样式。
 
-## Recommended IDE Setup
+## 准备
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+与[mt-plugin-container](https://github.com/zengsl/mt-plugin/tree/main/packages/mt-plugin-container)一样，当前插件依赖于mt-plugin-container，需要配合使用。
 
-## Type Support For `.vue` Imports in TS
+在vite中增加配置别名`@d`，方便使用
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+```js
+ alias: {
+    '@d': path.resolve(__dirname, './src/docs'),
+},
+```
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+## 使用方式
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+### 安装
+
+```shell
+pnpm add @mt-plugin/@mt-plugin/mt-plugin-demo-component
+```
+
+### 配置
+
+- 配置组件
+
+> 也可以自行封装一个Demo组件，参考[mt-plugin-demo-component](https://github.com/zengsl/mt-plugin/tree/main/packages/mt-plugin-demo-component)
+
+mt-plugin-demo-component使用方式
+
+```ts
+// main.ts
+// 文档插件
+import docs from '@mt-plugin/mt-plugin-demo-component'
+
+app.use(docs)
+```
+
+
+```js 
+// 安装vite插件，markdown转换器
+import { MarkdownDemoTransform } from '@mt-plugin/mt-plugin-demo-component'
+
+vitePlugins.push(MarkdownDemoTransform())
+```
+
+
+### 使用
+
+
+#### 创建文档
+
+1. 在src下创建一个docs目录，内部包含zh-CN、examples文件夹，zh-CN文件夹下包含文档说明文件，examples文件夹存放文档中需要使用的示例代码。
+
+2. 两个目录之间的关系：zh-CN下创建一个query.md用于描述查询组件文档，examples下创建一个query文件夹，query文件夹下包含xxx.vue示例组件。
+
+3. query.md中通过demo容器组件使用examples的示例代码，如：
+
+```js
+
+::: demo docsButton使用案例
+
+query/docsButton
+
+:::
+
+```
+docsButton使用案例为描述内容
+
+query/docsButton为示例组件的相对路径，切上下方各有一个行空行
+
+
+
+
+#### 创建展示容器组件
+
+创建一个用于展示的vue组件，并导入默认样式
+
+```vue
+<script setup lang="ts">
+import '@mt-plugin/mt-plugin-demo-component/dist/index.css'
+import componentDocs from '@d/zh-CN/component/query.md'
+</script>
+
+<template>
+  <div class="doc-content-wrapper">
+    <div class="doc-content-container">
+      <componentDocs />
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+//   外层如果有设置overflow属性，可能会影响代码内容打开后，收缩按钮在下方粘滞的效果。需要自行调整。
+/*.doc-content-wrapper {
+  height: calc(100vh - 84px);
+  overflow: auto;
+}
+:deep{
+  .mt-example-float-control {
+    bottom: -42px
+  }
+}*/
+</style>
+```

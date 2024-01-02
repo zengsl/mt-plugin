@@ -94,7 +94,36 @@ query/docsButton
 ```
 docsButton使用案例为描述内容
 
-query/docsButton为示例组件的相对路径，切上下方各有一个行空行
+`query/docsButton`为示例组件的相对路径，切上下方各有一个行空行
 
+4.创建一个用于展示的vue组件，并导入默认样式
+
+```vue
+<script setup lang="ts">
+import '@mt-plugin/mt-plugin-demo-component/dist/index.css'
+import componentDocs from '@d/zh-CN/component/query.md'
+</script>
+
+<template>
+  <div class="doc-content-wrapper">
+    <div class="doc-content-container">
+      <componentDocs />
+    </div>
+  </div>
+</template>
+
+<style lang="scss" scoped>
+//   外层如果有设置overflow属性，可能会影响代码内容打开后，收缩按钮在下方粘滞的效果。需要自行调整。
+/*.doc-content-wrapper {
+  height: calc(100vh - 84px);
+  overflow: auto;
+}
+:deep{
+  .mt-example-float-control {
+    bottom: -42px
+  }
+}*/
+</style>
+```
 
 更多内容参考[mt-plugin-demo-component](https://github.com/zengsl/mt-plugin/tree/main/packages/mt-plugin-demo-component)
