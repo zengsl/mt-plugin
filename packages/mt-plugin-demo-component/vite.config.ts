@@ -19,7 +19,8 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, 'src/index.ts'),
       name: 'index',
-      fileName: format => `index.${format}.js`,
+      formats: ['es', 'cjs'],
+      fileName: 'index',
     },
     rollupOptions: {
       // 确保外部化处理那些你不想打包进库的依赖

@@ -3,13 +3,13 @@
   "version": "0.0.2",
   "description": "",
   "type": "module",
-  "main": "dist/index.umd.js",
-  "module": "dist/index.es.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/index.es.js",
-      "require": "./dist/index.umd.js"
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
     },
     "./dist/index.css": {
       "import": "./dist/style.css",
@@ -23,12 +23,11 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build2": "rollup -c rollup.config.js",
     "preview": "vite preview"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zengsl/mt-plugin"
+    "url": "https://github.com/zengsl/mt-plugin/tree/main/packages/mt-plugin-demo-component"
   },
   "keywords": [
     "markdown-it",

@@ -18,7 +18,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zengsl/mt-plugin"
+    "url": "https://github.com/zengsl/mt-plugin/tree/main/packages/mt-plugin-demo"
   },
   "keywords": [
     "markdown-it",
