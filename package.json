@@ -19,6 +19,8 @@
     "@commitlint/types": "^18.4.3",
     "@rollup/plugin-commonjs": "^25.0.7",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@types/markdown-it": "^13.0.7",
+    "@types/markdown-it-container": "^2.0.9",
     "@types/node": "^20.10.5",
     "esbuild": "^0.19.10",
     "eslint": "8.55.0",

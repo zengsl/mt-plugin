@@ -1,6 +1,6 @@
 {
   "name": "@mt-plugin/mt-plugin-demo-component",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "",
   "type": "module",
   "main": "dist/index.cjs",
@@ -46,8 +46,8 @@
     "@element-plus/icons-vue": "^2.3.1",
     "@iconify-json/ri": "^1.1.18",
     "@vueuse/core": "^10.7.1",
-    "vue": "^3.3.11",
-    "prism-theme-vars": "^0.2.4"
+    "prism-theme-vars": "^0.2.4",
+    "vue": "^3.3.11"
   },
   "devDependencies": {
     "@iconify-json/ri": "^1.1.18",
@@ -58,6 +58,7 @@
     "unplugin-vue-components": "^0.26.0",
     "vite": "^5.0.8",
     "vite-plugin-commonjs-externals": "^0.1.4",
+    "vite-plugin-dts": "^3.7.0",
     "vite-plugin-node-polyfills": "^0.19.0",
     "vite-plugin-resolve": "^2.5.1"
   }

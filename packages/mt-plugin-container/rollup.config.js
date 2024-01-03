@@ -32,11 +32,11 @@ export default defineConfig([
   },
   /* 单独生成声明文件 */
   {
-    input: 'src/types.ts',
+    input: ['src/index.ts'],
     plugins: [dts()],
     output: {
       format: 'esm',
-      file: 'dist/index.d.ts',
+      dir: 'dist',
     },
   },
 ])

@@ -6,6 +6,7 @@ import Components from 'unplugin-vue-components/vite'
 
 import { nodePolyfills } from 'vite-plugin-node-polyfills'
 import IconsResolver from 'unplugin-icons/resolver'
+import dts from 'vite-plugin-dts'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -37,6 +38,7 @@ export default defineConfig({
 
   plugins: [
     vue(),
+    dts({ rollupTypes: true }),
     nodePolyfills(),
     Components({
       // allow auto load markdown components under `./src/components/`

@@ -20,7 +20,6 @@ export default function MarkdownDemoTransform(): Plugin {
     async transform(code, id) {
       if (!id.endsWith('.md'))
         return
-      console.log('transform id', id)
       const componentId = path.basename(id, '.md')
       const append: Append = {
         headers: [],
