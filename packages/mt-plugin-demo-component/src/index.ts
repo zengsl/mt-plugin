@@ -1,7 +1,8 @@
 import type { App } from 'vue'
 import { globals } from './components'
-import './styles/app.scss'
-import './styles/css-vars.scss'
+
+/* import './styles/app.scss'
+import './styles/css-vars.scss' */
 
 export { default as MarkdownDemoTransform } from './plugins/markdown-transform'
 export default {

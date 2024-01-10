@@ -4,6 +4,8 @@ import { useClipboard, useToggle } from '@vueuse/core'
 import { CaretTop } from '@element-plus/icons-vue'
 import Example from './demo/vp-example.vue'
 import SourceCode from './demo/vp-source-code.vue'
+import '@/styles/app.scss'
+import '@/styles/css-vars.scss'
 
 const props = defineProps<{
   demos: object
