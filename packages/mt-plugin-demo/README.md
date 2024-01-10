@@ -132,3 +132,4 @@ import componentDocs from '@d/zh-CN/component/query.md'
 ## 代办
 
 - [ ] highlight.ts中prism.languages配置更多扩展语言？
+- [ ] demo组件代码区域缺少语言标记vue
