@@ -16,7 +16,8 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c rollup.config.js"
+    "build": "rollup -c rollup.config.js",
+    "publish": "pnpm publish --access public"
   },
   "repository": {
     "type": "git",
