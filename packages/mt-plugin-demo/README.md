@@ -127,3 +127,8 @@ import componentDocs from '@d/zh-CN/component/query.md'
 ```
 
 更多内容参考[mt-plugin-demo-component](https://github.com/zengsl/mt-plugin/tree/main/packages/mt-plugin-demo-component)
+
+
+## 代办
+
+- [ ] highlight.ts中prism.languages配置更多扩展语言？
