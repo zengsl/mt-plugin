@@ -3,9 +3,13 @@ import escapeHtml from 'escape-html'
 import prism from 'prismjs'
 
 // prism is listed as actual dep so it's ok to require
-// const loadLanguages = require('prismjs/components/index')
+// eslint-disable-next-line ts/no-require-imports, ts/no-var-requires
+const loadLanguages = require('prismjs/components/index')
+
 // required to make embedded highlighting work...
-// loadLanguages(['markup', 'css', 'javascript'])
+// https://prismjs.com/#basic-usage-node
+// 载入所有支持的语言 https://prismjs.com/#supported-languages
+loadLanguages()
 
 function wrap(code: string, lang: string): string {
   if (lang === 'text') {
@@ -43,6 +47,12 @@ export function highlight(str: string, lang: string) {
         ),
       )
     }
+  } */
+  /* if (!prism.languages[lang]) {
+    console.debug('no lang', lang)
+  }
+  else {
+    console.debug('have lang', lang)
   } */
   if (prism.languages[lang]) {
     const code = prism.highlight(str, prism.languages[lang], lang)

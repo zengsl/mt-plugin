@@ -8,9 +8,5 @@ export default antfu({}, {
   rules: {
     'curly': 'off',
     'no-console': 'off',
-    /* 'vue/block-order': ['error', {
-      order: [['script', 'template'], 'style'],
-    }], */
-    '@typescript-eslint/no-var-requires': 0,
   },
 })
